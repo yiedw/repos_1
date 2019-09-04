@@ -9,20 +9,28 @@
 
 <body>
     <h1><%= title %></h1>
-    <form class="form-inline">
-        <div class="form-group">
-            <input type="text" class="form-control" id="new_todo" placeholder="새로운 할 일">
-            <button type="button" class="btn btn-primary"> 추가 </button>
+    <a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)"> 
+       추가
+        </a><div style="DISPLAY: none"><br>
+            <form class="form-inline">
+                <div class="form-group">
+                   <div> <input type="text" class="form-control" id="title" placeholder="제목"></div>
+                    <input type="text" class="form-control" id="contents" placeholder="내용">
+                    <input type="number" class="form-control" id="priority" placeholder="우선순위">
+                    <input type="date" class="form-control" id="end_time" placeholder="마감">
+                    <button type="button" class="btn btn-primary"> 추가 </button>
+                </div>
+            </form>
         </div>
-    </form>
     <table class="table">
         <thead>
             <tr>
                 <th>#</th>
-                <th>내용</th>
+                <th>제목</th>
+                <th>우선순위</th>
+                <th>마감</th>
                 <th>완료</th>
                 <th>삭제</th>
-                <th>마감</th>
             </tr>
         </thead>
         <tbody></tbody>

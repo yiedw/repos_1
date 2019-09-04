@@ -27,11 +27,17 @@ exports.list = function (req, res) {
 
 exports.add = function (req, res) {
     var todo = {
+        'title':'',
         'contents': '',
-        'complete': false
+        'priority' : '',
+        'end_time': '',
+        'complete': 'X'
     };
     
+    todo.title=req.body.title;
     todo.contents=req.body.contents;
+    todo.priority=req.body.priority;
+    todo.end_time=req.body.end_time;
     
     fs.readFile('./todo_list.json', {
         'encoding': 'utf8'
@@ -52,7 +58,7 @@ exports.complete=function(req,res){
         'encoding' : 'utf8'
     },function(err,data){
         data=JSON.parse(data);
-        data.list[req.body.index].complete=true;
+        data.list[req.body.index].complete='O';
 
         fs.writeFile('./todo_list.json',JSON.stringify(data),function(err){
             res.json(true);

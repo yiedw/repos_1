@@ -7,10 +7,12 @@ $(document).ready(function () {
                 list = JSON.parse(list).list;
 
                 for (var i = 0, len = list.length; i < len; i++) {
-                    trs += '<tr class="strikeout">' +
+                    trs += '<tr>' +
                         '<td>' + (i + 1) + '</td>' +
-                        '<td>' + list[i].contents + '</td>' +
-                        '<td><button type="button" class="btn btn-success">완료</button></td>' +
+                        '<td>' + list[i].title + '</td>' +
+                        '<td>' +list[i].priority+ '</td>' +
+                        '<td>' + list[i].end_time+'</td>' +
+                        '<td><button type="button" class="btn btn-success">'+list[i].complete+'</button></td>' +
                         '<td><button type="button" class="btn btn-danger"> 삭제</button></td>' +
                         '</tr>';
                 }
@@ -27,7 +29,10 @@ $(document).ready(function () {
         $.ajax('/add',{
             'method' : 'POST',
             'data' : {
-                'contents' : $('#new_todo').val()
+                'title' : $('#title').val(),
+                'contents' : $('#contents').val(),
+                'priority' : $('#priority').val(),
+                'end_time': $('#end_time').val()
             },
             'success' : get_list
         });
