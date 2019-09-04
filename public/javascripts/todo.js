@@ -45,7 +45,7 @@ $(document).ready(function () {
     })
 
     //선택한 할 일 삭제
-    $('tbody').on('click','btn-danger', function(){
+    $('tbody').on('click','.btn-danger', function(){
         $.ajax('/del',{
             'method' : 'POST',
             'data' : {
