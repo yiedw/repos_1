@@ -7,7 +7,7 @@ $(document).ready(function () {
                 list = JSON.parse(list).list;
 
                 for (var i = 0, len = list.length; i < len; i++) {
-                    trs += '<tr>' +
+                    trs += '<tr class="strikeout">' +
                         '<td>' + (i + 1) + '</td>' +
                         '<td>' + list[i].contents + '</td>' +
                         '<td><button type="button" class="btn btn-success">완료</button></td>' +
@@ -35,6 +35,7 @@ $(document).ready(function () {
 
     //선택한 할 일 완료
     $('tbody').on('click', '.btn-success', function(){
+        
         $.ajax('/complete',{
             'method' : 'POST',
             'data' : {

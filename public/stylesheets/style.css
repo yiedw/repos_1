@@ -6,7 +6,35 @@ a {
   color: #00b7ff;
 }
 
-.complete {
-	text-decoration: line-through;
+
+.table{
+  margin-top: 16px;
 }
 
+.btn-primary{
+  margin-left: 5px;
+}
+
+tr{
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  font-size: 25px;
+  position: relative;
+  padding: 5px 10px;
+  height: 66px;
+}
+
+/* tr.strikeout td:before {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-bottom: 1.2px solid #111;
+  width: 100%;
+} */
