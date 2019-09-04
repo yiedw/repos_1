@@ -3,6 +3,7 @@ var fs = require('fs');
 exports.list = function (req, res) {
     fs.exists("./todo_list.json", function (exists) {
 
+        
         if (exists) {
             fs.readFile('./todo_list.json', {
                 'encoding': 'utf8'
