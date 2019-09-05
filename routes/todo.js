@@ -66,8 +66,16 @@ exports.complete=function(req,res){
     })
 }
 
+exports.modified=function(req,res){
+    fetch.readFile('/todo_list.json',{
+        'encoding' : 'utf8'
+    },function(err,data){
+        data=JSON.parse(data);
+        // data.list[req.body.index]
+    })
+}
+
 exports.del=function(req,res){
-    console.log("DSf")
     fs.readFile('./todo_list.json',{
         'encoding' : 'utf8'
     }, function(err,data){

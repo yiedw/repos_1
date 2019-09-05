@@ -9,11 +9,14 @@ a {
 
 .table{
   margin-top: 16px;
+  text-align: center;
 }
 
 .btn-primary{
   margin-left: 5px;
-  
+}
+.btn-modified{
+  background-color: #e08918 !important;
 }
 
 tr{
@@ -23,22 +26,20 @@ tr{
 table {
   border-collapse: collapse;
 }
+.contents{
+  font-size: 15px;
+  padding-top: 11px !important;
+}
+.end_time{
+  font-size: 15px;
+}
+/* .prioirty{
+  font-size: 15px;
+} */
 
 td {
-  font-size: 25px;
+  font-size: 20px;
   position: relative;
   padding: 5px 10px;
   height: 66px;
 }
-/* .complete{
-  text-decoration: line-through;
-} */
-
-/* tr.strikeout td:before {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  border-bottom: 1.2px solid #111;
-  width: 100%;
-} */

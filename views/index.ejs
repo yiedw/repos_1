@@ -2,42 +2,49 @@
 <html>
 
 <head>
-    <title> <%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.css"/> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" \>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <title> <%= title %></title>
 </head>
 
 <body>
     <h1><%= title %></h1>
-    <a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)"> 
-       추가
-        </a><div style="DISPLAY: none"><br>
-            <form class="form-inline">
-                <div class="form-group">
-                   <div> <input type="text" class="form-control" id="title" placeholder="제목"></div>
-                    <input type="text" class="form-control" id="contents" placeholder="내용">
-                    <input type="number" class="form-control" id="priority" placeholder="우선순위">
-                    <input type="date" class="form-control" id="end_time" placeholder="마감">
-                    <button type="button" class="btn btn-primary"> 추가 </button>
-                </div>
-            </form>
+    <a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'flex':'none';"
+        href="javascript:void(0)">
+        추가
+    </a><div style="DISPLAY: none">
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="title" placeholder="제목">
+                <input type="text" class="form-control" id="contents" placeholder="내용">
+                <input type="number" class="form-control" id="priority" placeholder="우선순위">
+                <input type="date" class="form-control" id="end_time" placeholder="마감">
+                <button type="button" class="btn btn-primary"> 추가 </button>
+            </div>
+        </form>
         </div>
     <table class="table">
         <thead>
             <tr>
                 <th>#</th>
                 <th>제목</th>
+                <th>내용</th>
                 <th>우선순위</th>
                 <th>마감</th>
                 <th>완료</th>
+                <th>수정</th>
                 <th>삭제</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+        </tbody>
     </table>
 </body>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="/javascripts/todo.js"></script>
 
 </html>
