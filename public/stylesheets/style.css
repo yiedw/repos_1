@@ -22,7 +22,6 @@ a {
 tr{
   text-align: center;
 }
-/* #ta
 
 table {
   border-collapse: collapse;
@@ -34,9 +33,9 @@ table {
 .end_time{
   font-size: 15px;
 }
-/* .prioirty{
+.prioirty{
   font-size: 15px;
-} */
+}
 
 td {
   font-size: 20px;

@@ -1,9 +1,10 @@
 $(document).ready(function () {
+    var check = true;
     var get_list = function () {
         $.ajax('/list', {
             'success': function (list) {
-                var trs = '';
                 var number_arr = [];
+                var trs = '';
                 list = JSON.parse(list).list;
                 for (var i = 0, len = list.length; i < len; i++) {
                     trs += '<tr id="table_tr' + i + '">' +
@@ -23,20 +24,27 @@ $(document).ready(function () {
                     }
                 }
                 $('tbody').html(trs);
+
                 for (var i = 0; i < number_arr.length; i++) {
                     var temp = "#table_tr" + i;
                     $(temp).css({
                         color: "red"
                     })
-                    window.alert(list[i].title+" 마감 기한이 지났습니다");
+                    if (check) {
+                        window.alert(list[i].title + " 마감 기한이 지났습니다");
+                        check = false;
+                    }
                 }
             }
         });
 
         //정렬
+
         $(function(){
-            $('.table').tablesorter();
+
+            $('#my_table').tablesorter();
         })
+
     };
 
     get_list();
