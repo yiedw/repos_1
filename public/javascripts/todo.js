@@ -11,42 +11,41 @@ $(document).ready(function () {
                         '<td>' + (i + 1) + '</td>' +
                         '<td>' + list[i].title + '</td>' +
                         '<td class="contents">' + list[i].contents + '</td>' +
-                        '<td class ="priority">' + list[i].priority + '</td>' +
+                        '<td class="priority">' + list[i].priority + '</td>' +
                         '<td class="end_time">' + list[i].end_time + '</td>' +
                         '<td><button type="button" class="btn btn-success">' + list[i].complete + '</button></td>' +
                         '<td><button type="button" class="btn btn-modified">수정</button></td>' +
                         '<td><button type="button" class="btn btn-danger"> 삭제</button></td>' +
                         '</tr>'
                     var d = new Date(list[i].end_time);
+                    // console.log(d+","+i);
                     var today = new Date();
                     if (today > d) {
                         number_arr.push(i);
                     }
                 }
                 $('tbody').html(trs);
-
+                // console.log(number_arr);
                 for (var i = 0; i < number_arr.length; i++) {
-                    var temp = "#table_tr" + i;
+                    var temp = "#table_tr" + number_arr[i];
                     $(temp).css({
                         color: "red"
                     })
                     if (check) {
-                        window.alert(list[i].title + " 마감 기한이 지났습니다");
+                     window.alert("마감 기한이 지난 스케줄이 있습니다.");
                         check = false;
                     }
                 }
             }
-        });
-
-        //정렬
-
-        $(function(){
-
+        }); 
+        
+        //정렬(너무 파일을 읽기전에 실행되버리면 빈 데이터가 들어옴 --> 이걸 방지)
+        setTimeout(function(){
             $('#my_table').tablesorter();
-        })
-
+        },100);
+        
     };
-
+    
     get_list();
 
     //새로운 할 일 추가
@@ -58,9 +57,10 @@ $(document).ready(function () {
                 'contents': $('#contents').val(),
                 'priority': $('#priority').val(),
                 'end_time': $('#end_time').val()
-            },
-            'success': get_list
+            }
+            // 'success': get_list
         });
+        location.reload();
     });
 
     //선택한 할 일 완료
@@ -71,8 +71,9 @@ $(document).ready(function () {
             'data': {
                 'index': parseInt($(this).parent().siblings(':first').text()) - 1
             },
-            'success': get_list
+            // 'success': get_list
         })
+        location.reload();
     })
 
     //선택한 할 일 수정
@@ -84,8 +85,9 @@ $(document).ready(function () {
                 'index': parseInt($(this).parent().siblings(':first').text()) - 1
 
             },
-            success: get_list
+            // success: get_list
         })
+        location.reload();
     })
 
     //선택한 할 일 삭제
@@ -94,9 +96,10 @@ $(document).ready(function () {
             'method': 'POST',
             'data': {
                 'index': parseInt($(this).parent().siblings(':first').text()) - 1
-            },
-            'success': get_list
+            }
+            // 'success': get_list()
         })
+        location.reload();
     })
 
 
