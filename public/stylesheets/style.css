@@ -28,13 +28,13 @@ table {
 }
 .contents{
   font-size: 15px;
-  padding-top: 11px !important;
+  /* padding-top: 11px !important; */
 }
 .end_time{
   font-size: 15px;
 }
-.prioirty{
-  font-size: 10px !important;
+.priority{
+  font-size: 15px !important;
 }
 
 td {
@@ -43,3 +43,16 @@ td {
   padding: 5px 10px;
   height: 66px;
 }
+.coment{
+  text-align: right;
+  color:gray;
+}
+/* .hide{
+  width: 70%;
+} */
+/* #title{
+  width:30%;
+}
+#contents{
+  width: 70%;
+} */

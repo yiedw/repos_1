@@ -67,11 +67,18 @@ exports.complete=function(req,res){
 }
 
 exports.modified=function(req,res){
-    fetch.readFile('/todo_list.json',{
+    fs.readFile('./todo_list.json',{
         'encoding' : 'utf8'
     },function(err,data){
         data=JSON.parse(data);
-        // data.list[req.body.index]
+        data.list[req.body.index].title=req.body.title;
+        data.list[req.body.index].contents=req.body.contents;
+        data.list[req.body.index].priority=req.body.priority;
+        data.list[req.body.index].end_time=req.body.end_time;
+
+        fs.writeFile('./todo_list.json',JSON.stringify(data),function(err){
+            res.json(true);
+        })
     })
 }
 
