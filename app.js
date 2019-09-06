@@ -9,7 +9,6 @@ var usersRouter = require('./routes/users');
 
 var todo=require('./routes/todo')
 
-
 var app = express();
 
 // view engine setup
