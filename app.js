@@ -28,7 +28,7 @@ app.get('/list',todo.list);
 app.post('/add',todo.add)
 app.post('/complete', todo.complete);
 app.post('/del',todo.del);
-app.post('/modified',todo.modofied);
+// app.post('/modified',todo.modofied);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
