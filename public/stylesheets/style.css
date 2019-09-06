@@ -18,6 +18,9 @@ a {
 .btn-modified{
   background-color: #e08918 !important;
 }
+.btn-hide{
+  background-color: #e08918 !important;
+}
 
 tr{
   text-align: center;

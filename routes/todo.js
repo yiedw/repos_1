@@ -71,16 +71,18 @@ exports.modified=function(req,res){
         'encoding' : 'utf8'
     },function(err,data){
         data=JSON.parse(data);
-        data.list[req.body.index].title=req.body.title;
-        data.list[req.body.index].contents=req.body.contents;
-        data.list[req.body.index].priority=req.body.priority;
-        data.list[req.body.index].end_time=req.body.end_time;
-
+        data.list[req.body.index].title=req.body.title
+        data.list[req.body.index].contents=req.body.contents
+        data.list[req.body.index].priority=req.body.priority
+        // console.log(req.body.title);
+        // console.log(req.body.index);
         fs.writeFile('./todo_list.json',JSON.stringify(data),function(err){
             res.json(true);
         })
     })
 }
+
+
 
 exports.del=function(req,res){
     fs.readFile('./todo_list.json',{
